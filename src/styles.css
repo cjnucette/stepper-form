@@ -13,3 +13,14 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+.step__group {
+  display: none;
+}
+.step__group.active {
+  display: block;
+}
+.step__group label {
+  display: block;
+}
+
