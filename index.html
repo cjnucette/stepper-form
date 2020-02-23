@@ -9,28 +9,39 @@
     <script src="src/main.js" defer></script>
   </head>
   <body>
-    <form class="step">
-      <div class="step__number"><span>1</span> Step 1</div>
-      <div class="step__group">
-        <label>
-          Your email
-          <input class="step__input" type="email" name="email" required/>
-        </label>
-        <button class="step__button step__continue">continue</button>
+    <form class="step__form">
+      <div class="step active">
+        <div class="step__header">
+          <div class="step__number">1</div>
+          <div class="step__caption">Step 1</div>
+        </div>
+        <div class="step__formfield">
+          <label class="step__label">Your Email</label>
+          <input class="step__input" type="email" />
+          <button class="step__button continue">Continue</button>
+        </div>
       </div>
-      <div class="step__number"><span>2</span> Step 2</div>
-      <div class="step__group">
-        <label>
-          Your password
-          <input class="step__input" type="password" name="password" required/>
-        </label>
-        <button class="step__button step__continue">continue</button>
-        <button class="step__button step__back">back</button>
-      </div
-      <div class="step__number"><span>3</span> Step 3</div>
-      <div class="step__group">
-        <p>Finish</p>
-        <button type="submit" class="step__button step__submit">Submit</button>
+      <div class="step">
+        <div class="step__header">
+          <div class="step__number">2</div>
+          <div class="step__caption">Step 2</div>
+        </div>
+        <div class="step__formfield">
+          <label class="step__label">Your Password</label>
+          <input class="step__input" type="password" />
+          <button class="step__button continue">Continue</button>
+          <button class="step__button back">Back</button>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step__header">
+          <div class="step__number">3</div>
+          <div class="step__caption">Step 3</div>
+        </div>
+        <div class="step__formfield">
+          <label class="step__label">Finish!</label>
+          <button class="step__button" type="submit">Submit</button>
+        </div>
       </div>
     </form>
   </body>

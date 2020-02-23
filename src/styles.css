@@ -1,3 +1,8 @@
+:root {
+  --primary: dodgerblue;
+  --inactive: lightgray;
+  --color: #222;
+}
 *,
 *::before,
 *::after {
@@ -12,15 +17,76 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: var(--color);
 }
 
-.step__group {
-  display: none;
-}
-.step__group.active {
-  display: block;
-}
-.step__group label {
-  display: block;
+.step__form {
+  width: 450px;
+  border-radius: 1em;
+  padding: 1em 0;
+  box-shadow: 0 2px 30px 0 rgba(0, 0, 0, 0.1), 0 1px 15px 0 rgba(0, 0, 0, 0.1);
 }
 
+.step__header {
+  display: flex;
+  padding: 0.5em 1em;
+}
+
+.step__header:hover {
+  background: #eee;
+}
+
+.step__number {
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  background: lightgrey;
+  display: grid;
+  place-content: center;
+  color: white;
+}
+.active .step__number {
+  background: dodgerblue;
+}
+
+.step__caption {
+  align-self: center;
+  margin-left: 1em;
+}
+
+.step__formfield {
+  display: flex;
+  flex-direction: column;
+  max-height: 0;
+  overflow: hidden;
+  margin-left: 4em;
+  transition: max-height 0.5s;
+}
+.active .step__formfield {
+  max-height: 100vh;
+}
+
+.step__label {
+  color: #888;
+  margin-bottom: 0.5em;
+}
+
+.step__input {
+  margin-right: 3em;
+  font-size: 1.1em;
+  padding: 0.5em 0;
+  margin-bottom: 0.5em;
+  border: none;
+  border-bottom: 2px solid green;
+}
+
+.step__button {
+  align-self: flex-start;
+  border: none;
+  padding: 0.5em 1em;
+  background: dodgerblue;
+  color: white;
+  text-transform: uppercase;
+  border-radius: 5px;
+  margin-bottom: 0.5em;
+}
