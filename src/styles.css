@@ -1,26 +1,25 @@
-:root {
-  --primary: dodgerblue;
-  --inactive: lightgray;
-  --color: #222;
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-*,
-*::before,
-*::after {
+
+.step__form > * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Roboto', Arial, Helvetica, sans-serif;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--color);
-}
-
 .step__form {
+  --clr-active: dodgerblue;
+  --clr-done: lightgray;
+  --clr-underline: green;
+  --clr-white: #fff;
+  --clr-text: #222;
+  --clr-background: #eee;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  color: var(--clr-text);
   width: 450px;
   border-radius: 1em;
   padding: 1em 0;
@@ -33,20 +32,21 @@ body {
 }
 
 .step__header:hover {
-  background: #eee;
+  background: var(--clr-background);
 }
 
 .step__number {
   width: 2em;
   height: 2em;
   border-radius: 50%;
-  background: lightgrey;
+  background: var(--clr-done);
   display: grid;
   place-content: center;
-  color: white;
+  color: var(--clr-white);
+  font-weight: bold;
 }
 .active .step__number {
-  background: dodgerblue;
+  background: var(--clr-active);
 }
 
 .step__caption {
@@ -67,7 +67,7 @@ body {
 }
 
 .step__label {
-  color: #888;
+  color: var(--clr-done);
   margin-bottom: 0.5em;
 }
 
@@ -78,15 +78,20 @@ body {
   margin-bottom: 0.5em;
   border: none;
   outline: none;
-  border-bottom: 2px solid green;
+  border-bottom: 2px solid var(--clr-underline);
+}
+
+.step__input:not(:valid) {
+  --clr-underline: red;
 }
 
 .step__button {
   align-self: flex-start;
   border: none;
   padding: 0.5em 1em;
-  background: dodgerblue;
-  color: white;
+  background: var(--clr-active);
+  color: var(--clr-white);
+  font-weight: bold;
   text-transform: uppercase;
   border-radius: 5px;
   margin-bottom: 0.5em;
